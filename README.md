@@ -4,9 +4,9 @@ It allows admin to add, edit and delete new products and staff.
 
 Goal:
 To learn and understand flask backend framework authenication, authorasation and database.
-Majorly ensuring that admins and users are reconginized and more secure logins.
+ensuring that admins and users are recognized and more secure logins.
 
-What i Hve learnt and implemented:
+What i Have learnt and implemented:
 1. To work with flask routes
 2. API integration
 3. Authentication with flask_wtforms
