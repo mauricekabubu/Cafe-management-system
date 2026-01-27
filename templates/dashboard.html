@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}
+Dashboard page
+{% endblock %}
+
+{% block content %}
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="{{url_for('dashboard')}}">Dashboard</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+            <!-- Admin Menu Link -->
+            <li class="nav-item">
+                <a class="nav-link" href="/admin_menu">Admin Menu</a>
+            </li>
+            <!-- Staff page link -->
+             <li class="nav-item">
+                <a class="nav-link" href="/add_staff">Staff Menu</a>
+            </li>
+            <!-- Logout Link -->
+            <li class="nav-item">
+                <a class="nav-link text-danger" href="/logout">Logout</a>
+            </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <!-- Profile Picture Box -->
+            <div class="col-md-4 mb-4">
+            <div class="card shadow-sm text-center">
+                <div class="card-body">
+                    <img src="{{ url_for('static', filename=current_user.profile_image if current_user.profile_image else 'default.jpg') }}"
+                        alt="Admin Profile"
+                        class="img-fluid rounded-circle mb-3"
+                        style="width: 150px; height: 150px; object-fit: cover;">
+
+                    <h5 class="card-title">Admin Profile</h5>
+                    <form action="{{ url_for('upload_image') }}" method="POST" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="profilePic">Update Profile Picture</label>
+                            <input type="file" class="form-control-file" id="profilePic" name="profile_picture" accept="image/*" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-sm mt-2">Upload</button>
+                    </form>
+
+                </div>
+            </div>
+            </div>
+
+            <!-- Admin Info Box -->
+            <div class="col-md-6 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                <h5 class="card-title">Admin Information</h5>
+                <p><strong>Username:</strong> {{ current_user.username }}</p>
+                <p><strong>Email:</strong> {{ current_user.email }}</p>
+                <p><strong>Role:</strong> {{ current_user.role }}</p>
+                <p><strong>Last Login:</strong> {{ current_user.last_login if current_user.last_login else "N/A" }}</p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

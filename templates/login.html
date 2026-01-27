@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}
+Login page
+{% endblock %}
+
+{% block content %}
+    <header class="container mt-5">
+        <h2 class="text-center mb-4">Admin Login Page</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <form action="{{url_for('login')}}" method="post">
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Username</label>
+                                <input type="text" name="username" id="username" class="form-control" placeholder="Enter username">
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" name="password" id="password" class="form-control" placeholder="Enter password" required>
+                            </div>
+                            <div class="mb-3 text-end">
+                                <a href="{{url_for('dashboard')}}" target="_blank">Forgot password?</a>
+                            </div>
+                            <div class="d-grid mb-3">
+                                <button type="submit" class="btn btn-primary">Login</button>
+                            </div>
+                            <div class="text-center">
+                                <a href="{{url_for('register')}}" target="_blank">Don't have an account?</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Bootstrap 5 JS Bundle CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+{% endblock %}
