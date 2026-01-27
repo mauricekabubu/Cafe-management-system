@@ -24,20 +24,18 @@ What i Have learnt and implemented:
 15. Post and Get
 16. Sqlalchemy for database
 
-Features:
-1.Admin dashboard
-2.Tables
-3.Authenication pages
-4.Add and edit and delete tables 
-5.User's dashboards
+  Features:
+  1.Admin dashboard
+  2.Tables
+  3.Authenication pages
+  4.Add and edit and delete tables 
+  5.User's dashboards
 
-Technologies:
-1.Python -->BACKEND
-2.Flask python framework -->Backend
-3.Html -->Templates
-4.css -->Static
-5.Bootstrap css framework -->Frontend
-6.Javascript -->Frontend
+  Technologies:
+  1.Python -->BACKEND
+  2.Flask python framework -->Backend
+  3.Html -->Templates
+  4.css -->Static
+  5.Bootstrap css framework -->Frontend
+  6.Javascript -->Frontend
 
-## subheader
-CMS has an admin dashboard --> CRUD
