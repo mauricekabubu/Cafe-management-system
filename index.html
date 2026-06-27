@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}
+Flask web page
+{% endblock %}
+
+{% block body %}
+{% with message = get_flashed_messages%}
+    {% if messages %}
+        {% for msg in messages %}
+            <p>{{msg}}</p>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+    <div class="container">
+        <div class="box">
+            <form id="loginForm" method="POST">
+                <input type="text" name="username" id="username" placeholder="Enter Username">
+                <br>
+                <input type="password" name="password" id="password" placeholder="Enter Password">
+                <br>
+                <button type="submit" onclick="submitLogin()">Login</button>
+                <button type="button" onclick="submitRegister()">Register</button>
+            </form>
+
+        </div>
+    </div>
+
+<script>
+    function submitLogin()
+    {
+        const form = document.getElementById("loginForm");
+        form.action = "{{ url_for('login') }}";
+        form.submit();
+    }
+
+    function submitRegister() 
+    {
+        const form = document.getElementById("loginForm");
+        form.action = "{{ url_for('register') }}";
+        form.submit();
+    }
+</script>
+
+
+{% endblock %}
